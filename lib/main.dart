@@ -1,9 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_test_muhammad_riski/core/controller/controller.dart';
 import 'package:flutter_test_muhammad_riski/core/helper/route_helper.dart';
+import 'package:flutter_test_muhammad_riski/core/helper/validation_page_helper.dart';
 import 'package:flutter_test_muhammad_riski/core/material/material_color.dart';
+import 'package:flutter_test_muhammad_riski/feature/contact/presentation/controller/contact_controller.dart';
+import 'package:flutter_test_muhammad_riski/feature/contact/presentation/page/main_page_contact.dart';
 import 'package:flutter_test_muhammad_riski/feature/signup/presentation/controller/signup_controller.dart';
+import 'package:flutter_test_muhammad_riski/feature/signup/presentation/page/main_page_verification_code.dart';
 import 'package:get/get.dart';
 
 import 'feature/signup/presentation/page/main_page_signup.dart';
@@ -21,7 +26,9 @@ void main() async {
 class InitialBindings implements Bindings {
   @override
   void dependencies() {
+    Get.lazyPut<MainController>(() => MainController(), fenix: true);
     Get.lazyPut<SignupController>(() => SignupController());
+    Get.lazyPut<ContactController>(() => ContactController(), fenix: true);
   }
 }
 
@@ -35,7 +42,15 @@ class BionicTestApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: routeHelper.toVerificationNumbeCode,
+          page: () => MainVerificationCode(),
+        ),
+        GetPage(
+          name: routeHelper.toSignUp,
           page: () => MainPageSignUp(),
+        ),
+        GetPage(
+          name: routeHelper.toContact,
+          page: () => MianPageContact(),
         ),
       ],
       theme: ThemeData(
@@ -62,6 +77,6 @@ class InitialApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainPageSignUp();
+    return ValidationPage();
   }
 }

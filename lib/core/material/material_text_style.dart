@@ -39,6 +39,14 @@ class MaterialTextStyle {
     letterSpacing: 0.5,
     fontSize: 15,
   );
+
+  TextStyle largeTextStyle = GoogleFonts.archivo(
+    color: BionicColors.white,
+    fontWeight: FontWeight.w400,
+    wordSpacing: 1,
+    letterSpacing: 1,
+    fontSize: 20,
+  );
 }
 
 MaterialTextStyle materialTextStyle = MaterialTextStyle();

@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class OtpService {
+class LocalService {
   Future<SharedPreferences> initial() async {
     final sharePreferen = await SharedPreferences.getInstance();
 
@@ -12,8 +12,25 @@ class OtpService {
     await sharePreferen.setString('otp', otp);
   }
 
-  codeVerificationCalled(otp) async {
+  sessionSaved(noTlpn) async {
     final sharePreferen = await initial();
-    await sharePreferen.getString('otp');
+    await sharePreferen.setString('session', noTlpn);
+  }
+
+  Future<String?> sessionCalled() async {
+    final sharePreferen = await initial();
+    final session = await sharePreferen.getString('session');
+    return session;
+  }
+
+  Future<String?> codeVerificationCalled() async {
+    final sharePreferen = await initial();
+    final otp = await sharePreferen.getString('otp');
+    return otp;
+  }
+
+  codeVerificationDeleted() async {
+    final sharePreferen = await initial();
+    await sharePreferen.remove('otp');
   }
 }

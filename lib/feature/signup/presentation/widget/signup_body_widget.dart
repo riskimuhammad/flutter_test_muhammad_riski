@@ -91,11 +91,19 @@ class SignupBodyWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 40),
             child: ElevatedButton(
-              onPressed: () => controller.sendOtp(),
-              child: Text(
-                'Lanjut',
-                style: materialTextStyle.normalTextStyle,
-              ),
+              onPressed: () => controller.validationSendOtp(context),
+              child: Obx(() => controller.nextButtonValidationWidget(
+                  SizedBox(
+                    height: 30,
+                    width: 30,
+                    child: CircularProgressIndicator(
+                      color: BionicColors.primaryColorDark,
+                    ),
+                  ),
+                  Text(
+                    'Lanjut',
+                    style: materialTextStyle.normalTextStyle,
+                  ))),
               style: materialDecoration.buttonStyle(size: Size(100, 45)),
             ),
           ),

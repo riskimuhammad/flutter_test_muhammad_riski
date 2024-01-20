@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "467996889533",
-    "project_id": "bionictest-61a21",
-    "storage_bucket": "bionictest-61a21.appspot.com"
+    "project_number": "683720118931",
+    "firebase_url": "https://bionic-81f51-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bionic-81f51",
+    "storage_bucket": "bionic-81f51.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:467996889533:android:efd2d849003c85b22ac2d4",
+        "mobilesdk_app_id": "1:683720118931:android:3567fdbe27e410f73e3366",
         "android_client_info": {
           "package_name": "com.app.flutter_test_muhammad_riski"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyADz6axVOcne4eusi-SEbMQNY0ZbQdkMHg"
+          "current_key": "AIzaSyBTbC-zaFROjgefH_Na91fuVvAwaOgh8ew"
         }
       ],
       "services": {
