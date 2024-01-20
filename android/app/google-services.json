@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "467996889533",
+    "project_id": "bionictest-61a21",
+    "storage_bucket": "bionictest-61a21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467996889533:android:efd2d849003c85b22ac2d4",
+        "android_client_info": {
+          "package_name": "com.app.flutter_test_muhammad_riski"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADz6axVOcne4eusi-SEbMQNY0ZbQdkMHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

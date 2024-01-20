@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BionicColors {
   static const Color primaryColor = Color(0xff8f62d1);
-  static const Color primaryColorDark = Color(0xff3c2b54);
+  static const Color primaryColorDark = Color.fromARGB(255, 31, 25, 39);
   static const Color grey = Colors.grey;
   static Color greyDark = Colors.grey.shade600;
   static const Color white = Colors.white;
