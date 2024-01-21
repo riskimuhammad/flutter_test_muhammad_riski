@@ -5,8 +5,18 @@ import 'package:flutter_test_muhammad_riski/feature/chat/data/repository/chat_re
 class ChatRemoteRepositoryImpl implements ChatRemoteRepository {
   ChatRemoteRepository _remoteRepository = ChatRemoteRepository();
   @override
-  Future<QuerySnapshot<Map<String, dynamic>>> getChatCollection(
+  Stream<QuerySnapshot<Map<String, dynamic>>> getChatCollectionById(
       ChatByIdModel? data) {
-    return _remoteRepository.getChatCollection(data);
+    return _remoteRepository.getChatCollectionById(data);
+  }
+
+  @override
+  Stream<QuerySnapshot<Map<String, dynamic>>> getUserChat(phoneNumber) {
+    return _remoteRepository.getUserChat(phoneNumber);
+  }
+
+  @override
+  Stream<QuerySnapshot<Map<String, dynamic>>> getAllChatCollection(doc) {
+    return _remoteRepository.getAllChatCollection(doc);
   }
 }

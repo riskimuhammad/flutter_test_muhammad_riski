@@ -16,9 +16,7 @@ class MainPageChat extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<ChatController>(
       init: ChatController(),
-      initState: (_) {
-        controller.getChatById('', '');
-      },
+      initState: (_) {},
       builder: (_) {
         return Scaffold(
           floatingActionButton: FloatingActionButton(

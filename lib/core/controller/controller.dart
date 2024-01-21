@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../service/local/otp_service.dart';
+import '../service/otp_service.dart';
 
 class MainController extends GetxController {
   Rx<bool> sessionReady = false.obs;

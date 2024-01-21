@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test_muhammad_riski/core/helper/route_helper.dart';
-import 'package:flutter_test_muhammad_riski/core/service/local/otp_service.dart';
+import 'package:flutter_test_muhammad_riski/core/service/otp_service.dart';
 import 'package:flutter_test_muhammad_riski/feature/signup/domain/entity/country_entity.dart';
 import 'package:get/get.dart';
 import 'dart:math';
@@ -14,7 +14,7 @@ import 'package:otp_text_field/otp_field.dart';
 import '../../../../core/helper/dialog_helper.dart';
 
 class SignupController extends GetxController {
-  final otpService = LocalService();
+  final service = LocalService();
   Rx<OtpFieldController> otpController = OtpFieldController().obs;
   RxList<CountryEntity> listCountry = <CountryEntity>[].obs;
   Rx<TextEditingController> noTlpnController =
@@ -55,7 +55,7 @@ class SignupController extends GetxController {
       verificationCompleted: (PhoneAuthCredential credential) {
         isLoading.value = false;
         startTimer();
-        otpService.codeVerificationSaved(credential.smsCode);
+        service.codeVerificationSaved(credential.smsCode);
         Get.toNamed(routeHelper.toVerificationNumbeCode);
       },
       verificationFailed: (FirebaseAuthException e) {
@@ -88,7 +88,7 @@ class SignupController extends GetxController {
       if (verificationTimer.value == 0) {
         isLoading.value = false;
 
-        otpService.codeVerificationDeleted();
+        service.codeVerificationDeleted();
         timer.cancel();
       } else {
         verificationTimer.value--;
@@ -109,10 +109,10 @@ class SignupController extends GetxController {
 
   verificationCode(pin, context) async {
     final noTlpn = validationPhonNumber();
-    final otp = await otpService.codeVerificationCalled();
+    final otp = await service.codeVerificationCalled();
     if (verificationTimer.value != 0) {
       if (otp == pin) {
-        otpService.sessionSaved("${selectCountry.value}$noTlpn");
+        service.sessionSaved("${selectCountry.value}$noTlpn");
         DialogHelper.snackBarHelper(context,
             message: 'Terimakasih , kode sesuai');
         Get.toNamed(routeHelper.initial);
