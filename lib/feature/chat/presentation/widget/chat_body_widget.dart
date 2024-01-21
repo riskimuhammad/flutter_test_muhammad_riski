@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_test_muhammad_riski/core/helper/route_helper.dart';
 import 'package:flutter_test_muhammad_riski/core/material/material_color.dart';
 import 'package:flutter_test_muhammad_riski/feature/chat/presentation/controller/chat_controller.dart';
 import 'package:get/get.dart';
@@ -24,7 +25,7 @@ class ChatBodyWidget {
                   child: ListView.builder(
                     itemCount: snapshot.data!.docs.length,
                     itemBuilder: (context, index) =>
-                        controller.validationDataEntry(
+                        controller.validationListChatWidget(
                             context, snapshot.data!.docs[index].id),
                   ),
                 );

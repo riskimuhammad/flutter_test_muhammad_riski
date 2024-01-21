@@ -96,7 +96,9 @@ class ContactBodyWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width - 90,
                 child: Text(
-                  contact.phones.first.normalizedNumber,
+                  contact.phones.isEmpty
+                      ? ""
+                      : contact.phones.first.normalizedNumber,
                   style: materialTextStyle.normalTextStyleGrey,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,

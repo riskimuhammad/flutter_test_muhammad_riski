@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test_muhammad_riski/feature/chat/data/model/chat_by_id_model.dart';
 
+import '../model/chat_by_id_data_model.dart';
+
 class ChatRemoteDatasources {
   Stream<QuerySnapshot<Map<String, dynamic>>> getUserChat(phoneNumber) {
     final data = FirebaseFirestore.instance
@@ -27,9 +29,19 @@ class ChatRemoteDatasources {
         .collection('chat')
         .doc(model!.doc)
         .collection('message')
-        .where('rechiver', isEqualTo: model.rechiver)
-        .where('send_by', isEqualTo: model.sendBy)
+        .orderBy('time', descending: false)
         .snapshots();
+    log("${model.doc} ${model.id}");
+    return data;
+  }
+
+  Future<DocumentReference<Map<String, dynamic>>> setChatCollectionById(
+      ChatByIdModel? model, ChatByIdDataModel? body) {
+    final data = FirebaseFirestore.instance
+        .collection('chat')
+        .doc(model!.doc)
+        .collection('message')
+        .add(body!.toJson());
     return data;
   }
 }

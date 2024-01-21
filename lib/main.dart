@@ -7,6 +7,7 @@ import 'package:flutter_test_muhammad_riski/core/helper/route_helper.dart';
 import 'package:flutter_test_muhammad_riski/core/helper/validation_page_helper.dart';
 import 'package:flutter_test_muhammad_riski/core/material/material_color.dart';
 import 'package:flutter_test_muhammad_riski/feature/chat/presentation/controller/chat_controller.dart';
+import 'package:flutter_test_muhammad_riski/feature/chat/presentation/page/main_page_end_to_end_chat.dart';
 import 'package:flutter_test_muhammad_riski/feature/contact/presentation/controller/contact_controller.dart';
 import 'package:flutter_test_muhammad_riski/feature/contact/presentation/page/main_page_contact.dart';
 import 'package:flutter_test_muhammad_riski/feature/signup/presentation/controller/signup_controller.dart';
@@ -29,7 +30,7 @@ void main() async {
 class InitialBindings implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<MainController>(() => MainController(), fenix: true);
+    Get.put<MainController>(MainController());
     Get.lazyPut<SignupController>(() => SignupController());
     Get.lazyPut<ContactController>(() => ContactController(), fenix: true);
     Get.lazyPut<ChatController>(() => ChatController(), fenix: true);
@@ -55,6 +56,10 @@ class BionicTestApp extends StatelessWidget {
         GetPage(
           name: routeHelper.toContact,
           page: () => MianPageContact(),
+        ),
+        GetPage(
+          name: routeHelper.toEndToEndChat,
+          page: () => MainPageEndToEndChat(),
         ),
       ],
       theme: ThemeData(

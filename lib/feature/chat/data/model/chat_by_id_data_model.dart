@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class ChatByIdDataEntity {
+class ChatByIdDataModel {
   String? rechiver;
   Timestamp? time;
   String? message;
@@ -8,10 +8,10 @@ class ChatByIdDataEntity {
   String? disPlayName;
   String? id;
 
-  ChatByIdDataEntity(
-      this.rechiver, this.time, this.message, this.sendBy, this.id);
+  ChatByIdDataModel(this.rechiver, this.time, this.message, this.sendBy,
+      this.disPlayName, this.id);
 
-  ChatByIdDataEntity.fromJson(dynamic json) {
+  ChatByIdDataModel.fromJson(dynamic json) {
     id = json["id"];
     rechiver = json["rechiver"];
     time = json["time"];

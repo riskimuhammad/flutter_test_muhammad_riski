@@ -10,6 +10,13 @@ class MaterialTextStyle {
     letterSpacing: 1,
     fontSize: 14,
   );
+  TextStyle smallTextStyle = GoogleFonts.archivo(
+    color: BionicColors.grey,
+    fontWeight: FontWeight.w400,
+    wordSpacing: 1.5,
+    letterSpacing: 1,
+    fontSize: 9,
+  );
   TextStyle normalTextStyleGrey = GoogleFonts.archivo(
     color: BionicColors.grey,
     fontWeight: FontWeight.w400,
