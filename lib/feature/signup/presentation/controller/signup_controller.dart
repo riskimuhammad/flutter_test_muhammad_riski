@@ -112,7 +112,7 @@ class SignupController extends GetxController {
     final otp = await service.codeVerificationCalled();
     if (verificationTimer.value != 0) {
       if (otp == pin) {
-        service.sessionSaved("${selectCountry.value}$noTlpn");
+        service.sessionSaved("$noTlpn");
         DialogHelper.snackBarHelper(context,
             message: 'Terimakasih , kode sesuai');
         Get.toNamed(routeHelper.initial);
