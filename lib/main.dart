@@ -86,6 +86,8 @@ class InitialApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ValidationPage();
+    return GetBuilder<MainController>(
+      builder: (controller) => ValidationPage(),
+    );
   }
 }

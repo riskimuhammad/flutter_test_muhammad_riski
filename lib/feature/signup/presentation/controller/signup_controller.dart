@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test_muhammad_riski/core/helper/route_helper.dart';
 import 'package:flutter_test_muhammad_riski/core/service/otp_service.dart';
 import 'package:flutter_test_muhammad_riski/feature/signup/domain/entity/country_entity.dart';
+import 'package:flutter_test_muhammad_riski/feature/signup/presentation/page/main_page_verification_code.dart';
+import 'package:flutter_test_muhammad_riski/main.dart';
 import 'package:get/get.dart';
 import 'dart:math';
 
@@ -53,10 +55,14 @@ class SignupController extends GetxController {
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: '${selectCountry}${sendNoTlpn}',
       verificationCompleted: (PhoneAuthCredential credential) {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MainVerificationCode(),
+            ));
         isLoading.value = false;
         startTimer();
         service.codeVerificationSaved(credential.smsCode);
-        Get.toNamed(routeHelper.toVerificationNumbeCode);
       },
       verificationFailed: (FirebaseAuthException e) {
         isLoading.value = false;
@@ -115,7 +121,11 @@ class SignupController extends GetxController {
         service.sessionSaved("$noTlpn");
         DialogHelper.snackBarHelper(context,
             message: 'Terimakasih , kode sesuai');
-        Get.toNamed(routeHelper.initial);
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => InitialApp(),
+            ));
       } else {
         DialogHelper.snackBarHelper(context, message: 'OTP tidak sesuai');
         otpController.value.clear();

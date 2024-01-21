@@ -10,8 +10,14 @@ class ValidationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<MainController>();
-    return Obx(
-      () => controller.sessionReady.value ? MainPageChat() : MainPageSignUp(),
+    return GetBuilder<MainController>(
+      init: MainController(),
+      initState: (state) {
+        controller.validationPage();
+      },
+      builder: (controller) => Obx(
+        () => controller.sessionReady.value ? MainPageChat() : MainPageSignUp(),
+      ),
     );
   }
 }

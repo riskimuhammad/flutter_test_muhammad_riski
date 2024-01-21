@@ -44,42 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBFwvqj2f9-qsBfQugOyFE7lpbpRWTTGRU',
-    appId: '1:683720118931:web:adeff60e2166d8e83e3366',
-    messagingSenderId: '683720118931',
-    projectId: 'bionic-81f51',
-    authDomain: 'bionic-81f51.firebaseapp.com',
-    databaseURL: 'https://bionic-81f51-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'bionic-81f51.appspot.com',
-    measurementId: 'G-PQSEDES133',
+    apiKey: 'AIzaSyCSIbyjknG-lruc1KWWJzNnLFnCuwBFvh8',
+    appId: '1:1016309674553:web:d65d3bedf0dde3559e13e8',
+    messagingSenderId: '1016309674553',
+    projectId: 'bionic-3',
+    authDomain: 'bionic-3.firebaseapp.com',
+    storageBucket: 'bionic-3.appspot.com',
+    measurementId: 'G-G1F8MME6M7',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBTbC-zaFROjgefH_Na91fuVvAwaOgh8ew',
-    appId: '1:683720118931:android:3567fdbe27e410f73e3366',
-    messagingSenderId: '683720118931',
-    projectId: 'bionic-81f51',
-    databaseURL: 'https://bionic-81f51-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'bionic-81f51.appspot.com',
+    apiKey: 'AIzaSyD9Oqq_aquFN0tCSHyJqIxu10kDKywXkpI',
+    appId: '1:1016309674553:android:6891491b3f3821629e13e8',
+    messagingSenderId: '1016309674553',
+    projectId: 'bionic-3',
+    storageBucket: 'bionic-3.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAY-APb-oQNbismS6iOkdOP-m3nTG466ag',
-    appId: '1:683720118931:ios:3e43e742c7800ab43e3366',
-    messagingSenderId: '683720118931',
-    projectId: 'bionic-81f51',
-    databaseURL: 'https://bionic-81f51-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'bionic-81f51.appspot.com',
+    apiKey: 'AIzaSyD112D9ejYIvr8TRODViLug3DoS-iwDKbw',
+    appId: '1:1016309674553:ios:2fea78e8fa72e4a39e13e8',
+    messagingSenderId: '1016309674553',
+    projectId: 'bionic-3',
+    storageBucket: 'bionic-3.appspot.com',
     iosBundleId: 'com.example.flutterTestMuhammadRiski',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAY-APb-oQNbismS6iOkdOP-m3nTG466ag',
-    appId: '1:683720118931:ios:3e43e742c7800ab43e3366',
-    messagingSenderId: '683720118931',
-    projectId: 'bionic-81f51',
-    databaseURL: 'https://bionic-81f51-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'bionic-81f51.appspot.com',
+    apiKey: 'AIzaSyD112D9ejYIvr8TRODViLug3DoS-iwDKbw',
+    appId: '1:1016309674553:ios:2fea78e8fa72e4a39e13e8',
+    messagingSenderId: '1016309674553',
+    projectId: 'bionic-3',
+    storageBucket: 'bionic-3.appspot.com',
     iosBundleId: 'com.example.flutterTestMuhammadRiski',
   );
 }
