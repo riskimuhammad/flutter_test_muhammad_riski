@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_test_muhammad_riski/core/controller/controller.dart';
 import 'package:flutter_test_muhammad_riski/core/helper/route_helper.dart';
 import 'package:flutter_test_muhammad_riski/core/helper/validation_page_helper.dart';
 import 'package:flutter_test_muhammad_riski/core/material/material_color.dart';
+import 'package:flutter_test_muhammad_riski/feature/chat/presentation/controller/chat_controller.dart';
 import 'package:flutter_test_muhammad_riski/feature/contact/presentation/controller/contact_controller.dart';
 import 'package:flutter_test_muhammad_riski/feature/contact/presentation/page/main_page_contact.dart';
 import 'package:flutter_test_muhammad_riski/feature/signup/presentation/controller/signup_controller.dart';
@@ -20,6 +22,7 @@ void main() async {
       options: DefaultFirebaseOptions.currentPlatform);
 
   await FirebaseAuth.instanceFor(app: app);
+  await FirebaseFirestore.instanceFor(app: app);
   runApp(BionicTestApp());
 }
 
@@ -29,6 +32,7 @@ class InitialBindings implements Bindings {
     Get.lazyPut<MainController>(() => MainController(), fenix: true);
     Get.lazyPut<SignupController>(() => SignupController());
     Get.lazyPut<ContactController>(() => ContactController(), fenix: true);
+    Get.lazyPut<ChatController>(() => ChatController(), fenix: true);
   }
 }
 

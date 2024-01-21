@@ -8,7 +8,6 @@ import 'package:flutter_test_muhammad_riski/core/service/local/otp_service.dart'
 import 'package:flutter_test_muhammad_riski/feature/signup/domain/entity/country_entity.dart';
 import 'package:get/get.dart';
 import 'dart:math';
-import 'dart:developer' as dev;
 
 import 'package:otp_text_field/otp_field.dart';
 
@@ -119,6 +118,7 @@ class SignupController extends GetxController {
         Get.toNamed(routeHelper.initial);
       } else {
         DialogHelper.snackBarHelper(context, message: 'OTP tidak sesuai');
+        otpController.value.clear();
       }
     } else {
       DialogHelper.snackBarHelper(context,

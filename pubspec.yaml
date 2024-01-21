@@ -44,6 +44,7 @@ dependencies:
   phosphor_flutter: ^2.0.1
   another_flushbar: ^1.12.30
   flutter_contacts: ^1.1.7+1
+  cloud_firestore: ^4.14.0
 
 dev_dependencies:
   flutter_test:
